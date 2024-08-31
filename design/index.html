@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('https://via.placeholder.com/1500x400') no-repeat center center/cover;
+            text-align: center;
+            color: #ffffff;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        button {
+            font-size: 18px;
+            text-decoration: none;
+            color: #ffffff;
+            border: #ffffff 1px solid;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #50b3a2;
+        }
+        button:hover {
+            background: #35a79c;
+            color: #ffffff;
+        }
+        #about, #content, #services, #testimonials, #contact {
+            padding: 15px;
+            background: #f4f4f4;
+            margin-top: 20px;
+        }
+        #content .post, #services .service, #testimonials .testimonial {
+            float: left;
+            text-align: center;
+            width: 30%;
+            padding: 10px;
+        }
+        #content .post img, #services .service img, #testimonials .testimonial img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #50b3a2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Content</span> Creator</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#content">Content</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to My Creative World</h1>
+            <p>Explore the art of storytelling through various mediums</p>
+            <button>Discover More</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <img src="https://via.placeholder.com/150" alt="Creator's photo" style="border-radius: 50%;">
+            <p>I'm a passionate content creator specializing in digital storytelling. With years of experience in video production, blogging, and social media management, I bring ideas to life through compelling content.</p>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="container">
+            <h2>Latest Content</h2>
+            <div class="post">
+                <img src="https://via.placeholder.com/90" alt="Post 1">
+                <h3>Blog Post Title 1</h3>
+                <p>Short description of the blog post...</p>
+            </div>
+            <div class="post">
+                <img src="https://via.placeholder.com/90" alt="Post 2">
+                <h3>Video Title 1</h3>
+                <p>Brief overview of the video content...</p>
+            </div>
+            <div class="post">
+                <img src="https://via.placeholder.com/90" alt="Post 3">
+                <h3>Podcast Episode 1</h3>
+                <p>Quick summary of the podcast topic...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="service">
+                <img src="https://via.placeholder.com/90" alt="Service 1">
+                <h3>Content Creation</h3>
+                <p>Custom content tailored to your brand...</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/90" alt="Service 2">
+                <h3>Social Media Management</h3>
+                <p>Engaging social media strategies...</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/90" alt="Service 3">
+                <h3>Brand Collaborations</h3>
+                <p>Partnerships that align with your vision...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/90" alt="Client 1">
+                <p>"Working with this content creator was a game-changer for our brand!"</p>
+                <p>- Jane Doe, Company XYZ</p>
+            </div>
+            <div class="testimonial">
+                <img src="https://via.placeholder.com/90" alt="Client 2">
+                <p>"Incredible storytelling skills and professionalism. Highly recommended!"</p>
+                <p>- John Smith, Brand ABC</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Content Creator. All rights reserved.</p>
+        <div>
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a> |
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">YouTube</a>
+        </div>
+    </footer>
+</body>
+</html>
