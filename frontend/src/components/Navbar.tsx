@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 
-
-
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
@@ -12,48 +10,56 @@ export default function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
+        <MenuItem setActive={setActive} active={active} item="Content">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/videos">Videos</HoveredLink>
+            <HoveredLink href="/blog">Blog Posts</HoveredLink>
+            <HoveredLink href="/podcasts">Podcasts</HoveredLink>
+            <HoveredLink href="/live-streams">Live Streams</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+        <MenuItem setActive={setActive} active={active} item="Featured">
+          <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
+              title="Latest Video"
+              href="/videos/latest"
+              src="/images/recentvideo.png"
+              description="Check out my most recent video content."
             />
             <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
+              title="Popular Blog Post"
+              href="/blog/popular"
+              src="/images/blogpost.png"
+              description="Read my most popular blog post of the month."
             />
             <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
+              title="New Podcast Episode"
+              href="/podcasts/new"
+              src="/images/podcast.png"
+              description="Listen to the latest episode of my podcast series."
             />
             <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              title="Upcoming Live Stream"
+              href="/live-streams/upcoming"
+              src="/images/livestreame.png"
+              description="Join my next live stream event and interact in real-time."
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem setActive={setActive} active={active} item="Support">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/membership">Membership</HoveredLink>
+            <HoveredLink href="/merch">Merchandise</HoveredLink>
+            <HoveredLink href="/donate">Donate</HoveredLink>
+            <HoveredLink href="/patreon">Patreon</HoveredLink>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="About">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/bio">Bio</HoveredLink>
+            <HoveredLink href="/contact">Contact</HoveredLink>
+            <HoveredLink href="/faq">FAQ</HoveredLink>
+            <HoveredLink href="/press">Press Kit</HoveredLink>
           </div>
         </MenuItem>
       </Menu>

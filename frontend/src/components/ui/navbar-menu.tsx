@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const transition = {
   type: "spring",
@@ -24,11 +25,16 @@ export const MenuItem = ({
   item: string;
   children?: React.ReactNode;
 }) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+        className={`cursor-pointer ${
+          isDark ? "text-gray-200 hover:text-white" : "text-gray-800 hover:text-black"
+        }`}
       >
         {item}
       </motion.p>
@@ -42,11 +48,15 @@ export const MenuItem = ({
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
               <motion.div
                 transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                layoutId="active"
+                className={`${
+                  isDark
+                    ? "bg-gray-900 border-gray-700"
+                    : "bg-white border-gray-200"
+                } backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl`}
               >
                 <motion.div
-                  layout // layout ensures smooth animation
+                  layout
                   className="w-max h-full p-4"
                 >
                   {children}
@@ -67,10 +77,17 @@ export const Menu = ({
   setActive: (item: string | null) => void;
   children: React.ReactNode;
 }) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      onMouseLeave={() => setActive(null)}
+      className={`relative rounded-xl border ${
+        isDark
+          ? "bg-gray-900 border-gray-700"
+          : "bg-white border-gray-200"
+      } shadow-lg flex justify-center space-x-8 px-8 py-6`}
     >
       {children}
     </nav>
@@ -88,6 +105,9 @@ export const ProductItem = ({
   href: string;
   src: string;
 }) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <Link href={href} className="flex space-x-2">
       <Image
@@ -98,10 +118,14 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className={`text-xl font-bold mb-1 ${
+          isDark ? "text-white" : "text-gray-900"
+        }`}>
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className={`text-sm max-w-[10rem] ${
+          isDark ? "text-gray-300" : "text-gray-600"
+        }`}>
           {description}
         </p>
       </div>
@@ -110,10 +134,17 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, ...rest }: any) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+      className={`${
+        isDark
+          ? "text-gray-300 hover:text-white"
+          : "text-gray-600 hover:text-gray-900"
+      } transition-colors duration-200`}
     >
       {children}
     </Link>
