@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 
 const transition = {
   type: "spring",
@@ -25,16 +24,11 @@ export const MenuItem = ({
   item: string;
   children?: React.ReactNode;
 }) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className={`cursor-pointer ${
-          isDark ? "text-gray-200 hover:text-white" : "text-gray-800 hover:text-black"
-        }`}
+        className="cursor-pointer text-gray-800 hover:text-black"
       >
         {item}
       </motion.p>
@@ -49,11 +43,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className={`${
-                  isDark
-                    ? "bg-gray-900 border-gray-700"
-                    : "bg-white border-gray-200"
-                } backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl`}
+                className="bg-white border-gray-200 backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl"
               >
                 <motion.div
                   layout
@@ -77,17 +67,10 @@ export const Menu = ({
   setActive: (item: string | null) => void;
   children: React.ReactNode;
 }) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className={`relative rounded-xl border ${
-        isDark
-          ? "bg-gray-900 border-gray-700"
-          : "bg-white border-gray-200"
-      } shadow-lg flex justify-center space-x-8 px-8 py-6`}
+      className="relative rounded-xl border bg-slate-200 border-gray-200 shadow-lg flex justify-center space-x-8 px-8 py-6"
     >
       {children}
     </nav>
@@ -105,9 +88,6 @@ export const ProductItem = ({
   href: string;
   src: string;
 }) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <Link href={href} className="flex space-x-2">
       <Image
@@ -118,14 +98,10 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className={`text-xl font-bold mb-1 ${
-          isDark ? "text-white" : "text-gray-900"
-        }`}>
+        <h4 className="text-xl font-bold mb-1 text-gray-900">
           {title}
         </h4>
-        <p className={`text-sm max-w-[10rem] ${
-          isDark ? "text-gray-300" : "text-gray-600"
-        }`}>
+        <p className="text-sm max-w-[10rem] text-gray-600">
           {description}
         </p>
       </div>
@@ -134,17 +110,10 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, ...rest }: any) => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <Link
       {...rest}
-      className={`${
-        isDark
-          ? "text-gray-300 hover:text-white"
-          : "text-gray-600 hover:text-gray-900"
-      } transition-colors duration-200`}
+      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
     >
       {children}
     </Link>

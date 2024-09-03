@@ -89,7 +89,7 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-6 py-8 hidden md:flex md:flex-col bg-indigo-900 text-white w-[300px] flex-shrink-0 shadow-lg",
+          "h-full px-6 py-8 hidden md:flex md:flex-col bg-slate-200 text-black hover:text-slate-800 w-[300px] flex-shrink-0 shadow-lg",
           className
         )}
         animate={{
@@ -115,14 +115,15 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "h-16 px-4 flex flex-row md:hidden items-center justify-between bg-gray-200 text-white w-full shadow-lg rounded-md"
+          "h-16 px-4 flex flex-row md:hidden items-center justify-between bg-slate-200 text-black w-full shadow-lg rounded-md",
+          className
         )}
         {...props}
       >
         <div className="flex justify-between z-20 w-full">
-            <h1 className="text-black text-lg">Rishab kshetri</h1> 
+            <h1 className="text-black text-xl">Rishab kshetri</h1> 
           <IconMenu2
-            className="text-black hover:text-slate-600 transition-colors"
+            className="text-black hover:text-slate-800 transition-colors"
             onClick={() => setOpen(!open)}
           />
         </div>
@@ -137,12 +138,12 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-indigo-900 text-white p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-slate-200 text-black hover:text-slate-800 p-10 z-[100] flex flex-col justify-between",
                 className
               )}
             >
               <div
-                className="absolute right-6 top-6 z-50 text-white hover:text-indigo-200 transition-colors"
+                className="absolute right-6 top-6 z-50 text-black hover:text-slate-800 transition-colors"
                 onClick={() => setOpen(!open)}
               >
                 <IconX />
@@ -170,18 +171,18 @@ export const SidebarLink = ({
     <Link
       href={link.href}
       className={cn(
-        "flex items-center justify-start gap-4 py-3 px-4 rounded-lg hover:bg-indigo-800 transition-colors duration-200",
+        "flex items-center justify-start gap-4 py-3 px-4 rounded-lg hover:bg-slate-300 transition-colors duration-200",
         className
       )}
       {...props}
     >
-      <span className="text-indigo-200">{link.icon}</span>
+      <span className="text-black">{link.icon}</span>
       <motion.span
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-white text-sm font-medium whitespace-pre"
+        className="text-black hover:text-slate-800 text-sm font-medium whitespace-pre"
       >
         {link.label}
       </motion.span>

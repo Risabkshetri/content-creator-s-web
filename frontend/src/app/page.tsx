@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import Homepage from "@/components/Homepage";
+import Homepage from "@/components/home/Homepage";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
     <Navbar />
-    <div className="px-32">
+    <div className="md:px-32 px-1">
     <Homepage />
     </div>
+    <Footer />
     </>
   )
 }

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import SidebarDemo from "./SidebarDemo";
 
@@ -21,6 +22,9 @@ export default function Navbar({ className }: { className?: string }) {
 
   const DesktopMenu = () => (
     <Menu setActive={setActive}>
+        <div className="text-slate-950 hover:text-800 ">
+          <Link href="/">Home</Link>
+        </div>
       <MenuItem setActive={setActive} active={active} item="Content">
         <div className="flex flex-col space-y-4 text-sm">
           <HoveredLink href="/videos">Videos</HoveredLink>
@@ -77,7 +81,7 @@ export default function Navbar({ className }: { className?: string }) {
   );
 
   return (
-    <div className={cn("fixed top-3 inset-x-0 max-w-2xl mx-auto z-50", className)}>
+    <div className={cn("fixed top-0 inset-x-0 max-w-2xl mx-auto z-50", className)}>
       {isMobile ? (
         <SidebarDemo />
       ) : (

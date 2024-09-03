@@ -51,16 +51,16 @@ const navContent = {
     }
   ],
   Support: [
-    { href: "/membership", label: "Membership", icon: <IconStar /> },
-    { href: "/merch", label: "Merchandise", icon: <IconHeart /> },
-    { href: "/donate", label: "Donate", icon: <IconHeart /> },
-    { href: "/patreon", label: "Patreon", icon: <IconHeart /> }
+    { href: "/membership", label: "Membership", icon: <IconStar className="text-black"/> },
+    { href: "/merch", label: "Merchandise", icon: <IconHeart className="text-black" /> },
+    { href: "/donate", label: "Donate", icon: <IconHeart className="text-black" /> },
+    { href: "/patreon", label: "Patreon", icon: <IconHeart className="text-black" /> }
   ],
   About: [
-    { href: "/bio", label: "Bio", icon: <IconInfoCircle /> },
-    { href: "/contact", label: "Contact", icon: <IconInfoCircle /> },
-    { href: "/faq", label: "FAQ", icon: <IconInfoCircle /> },
-    { href: "/press", label: "Press Kit", icon: <IconInfoCircle /> }
+    { href: "/bio", label: "Bio", icon: <IconInfoCircle className="text-black" /> },
+    { href: "/contact", label: "Contact", icon: <IconInfoCircle className="text-black" /> },
+    { href: "/faq", label: "FAQ", icon: <IconInfoCircle className="text-black" /> },
+    { href: "/press", label: "Press Kit", icon: <IconInfoCircle className="text-black" /> }
   ]
 };
 
@@ -80,9 +80,9 @@ export default function SidebarDemo(){
             <div className="mt-8 flex flex-col gap-2">
               <SidebarLink
                 link={{
-                  label: "Dashboard",
+                  label: "Home",
                   href: "#",
-                  icon: <IconHome className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  icon: <IconHome className="text-black h-5 w-5 flex-shrink-0" />
                 }}
               />
               {Object.entries(navContent).map(([category, items]) => (
@@ -107,7 +107,7 @@ export default function SidebarDemo(){
               link={{
                 label: "Logout",
                 href: "#",
-                icon: <IconLogout className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                icon: <IconLogout className="text-black h-5 w-5 flex-shrink-0" />
               }}
             />
             <SidebarLink
@@ -142,7 +142,7 @@ const Logo = () => {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium text-black dark:text-white whitespace-pre"
+        className="font-medium text-black whitespace-pre"
       >
        Rishab Kshetri
       </motion.span>
