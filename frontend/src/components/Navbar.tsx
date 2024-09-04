@@ -71,7 +71,7 @@ export default function Navbar({ className }: { className?: string }) {
       </MenuItem>
       <MenuItem setActive={setActive} active={active} item="About">
         <div className="flex flex-col space-y-4 text-sm">
-          <HoveredLink href="/bio">Bio</HoveredLink>
+          <HoveredLink href="/about">Bio</HoveredLink>
           <HoveredLink href="/contact">Contact</HoveredLink>
           <HoveredLink href="/faq">FAQ</HoveredLink>
           <HoveredLink href="/press">Press Kit</HoveredLink>
