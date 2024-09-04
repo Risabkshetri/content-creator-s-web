@@ -1,6 +1,9 @@
+'use clients'
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import axios from 'axios'
+
 
 interface BlogPost {
   id: number;
@@ -12,35 +15,6 @@ interface BlogPost {
   content: string;
 }
 
-const BlogList: BlogPost[] = [
-  {
-    id: 1,
-    title: 'Introduction to Next.js',
-    description: 'Learn the basics of Next.js and why its a great framework for React applications.',
-    image: 'https://picsum.photos/seed/nextjs/200',
-    slug: 'intro-to-nextjs',
-    category: 'tech',
-    content: 'Next.js is a powerful React framework that enables features such as server-side rendering and generating static websites for React based web applications. Its a production-ready framework that allows you to create full-stack Web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.',
-  },
-  {
-    id: 2,
-    title: 'Exploring Paris',
-    description: 'A journey through the City of Light, exploring its culture, cuisine, and hidden gems.',
-    image: 'https://picsum.photos/seed/paris/200',
-    slug: 'exploring-paris',
-    category: 'travel',
-    content: 'Paris, the capital of France, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.',
-  },
-  {
-    id: 3,
-    title: 'The Art of Sushi Making',
-    description: 'Dive into the intricate world of sushi preparation and its cultural significance.',
-    image: 'https://picsum.photos/seed/sushi/200',
-    slug: 'sushi-making',
-    category: 'food',
-    content: 'Sushi is a traditional Japanese dish of prepared vinegared rice, usually with some sugar and salt, accompanying a variety of ingredients, such as seafood, often raw, and vegetables. Styles of sushi and its presentation vary widely, but the one key ingredient is "sushi rice", also referred to as shari, or sumeshi.',
-  },
-];
 
 const BlogCard: React.FC<BlogPost> = ({
   title,

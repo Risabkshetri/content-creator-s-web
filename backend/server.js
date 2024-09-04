@@ -6,16 +6,19 @@ const cors = require('cors');
 const path = require('path');
 
 const server = express();
-const productRouter = require('./routes/product')
-const userRouter = require('./routes/user')
+const blogRouter = require('./routes/blog')
+const videoRouter = require('./routes/video')
+const userProvider = require('./routes/users')
+// const userRouter = require('./routes/user')
 console.log('env',process.env.DB_PASSWORD)
+console.log('env', process.env.MONGO_URL)
 
 
 //db connection
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.MONGO_URL);
+  await mongoose.connect(`mongodb+srv://rishab:${process.env.DB_PASSWORD}@cluster0.loqz1.mongodb.net/creatorDB?retryWrites=true&w=majority&appName=Cluster0`);
   console.log('database connected')
 }
 
@@ -26,12 +29,13 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan('default'));
 server.use(express.static(process.env.PUBLIC_DIR));
-server.use('/products',productRouter.router);
-server.use('/users',userRouter.router);
-server.use('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname , 'dist' , 'index.html'));
-})
+server.use('/api/blogs', blogRouter.router);
+server.use('/', blogRouter.router);
+server.use('/api/videos', videoRouter.router);
+server.use('/', videoRouter.router);
+server.use('/api/users', userProvider.router);
+server.use('/', userProvider.router);
 
-server.listen(8080, () => {
+server.listen(8081, () => {
   console.log('server started');
 });

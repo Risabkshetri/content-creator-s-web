@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-100 to-gray-200">
+    <section id = "contact" className="py-16 bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
