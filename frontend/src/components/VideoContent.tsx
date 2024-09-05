@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import React from 'react';
+import { Video } from '@/lib/api';
+import Image from "next/image";
 import {
   IconBrandYoutube,
   IconMovie,
@@ -10,78 +10,82 @@ import {
   IconBrandInstagram,
   IconBrandTwitch,
 } from "@tabler/icons-react";
-import Image from "next/image";
 
-export function VideoContent() {
-  return (
-    <BentoGrid className="max-w-4xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
-  );
+interface VideoContentProps {
+  videos: Video[];
 }
 
-const VideoThumbnail = ({ src }: { src: string }) => (
-  <div className="relative w-full h-32 md:h-48 rounded-xl overflow-hidden">
-    <Image
-      src={src}
-      alt="Video thumbnail"
-      layout="fill"
-      objectFit="cover"
-      className="transition-transform duration-300 hover:scale-110"
-    />
-  </div>
-);
+export const VideoContent: React.FC<VideoContentProps> = ({ videos }) => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto p-6">
+      {videos.map((video, i) => (
+        <div
+          key={video.id}
+          className={`bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden ${
+            i === 3 || i === 6 ? "md:col-span-2" : ""
+          }`}
+        >
+          <div className="relative h-48 w-full">
+            <Image
+              src={video.thumbnail}
+              alt={video.title}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-300 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div className="text-white text-4xl">▶️</div>
+            </div>
+          </div>
+          <div className="p-4">
+            <div className="flex items-center mb-2">
+              {getIconForCategory(video.category)}
+              <h3 className="text-lg font-semibold ml-2 text-gray-800 dark:text-gray-200">{video.title}</h3>
+            </div>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{video.description}</p>
+            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+              <span>{formatDuration(video.duration)}</span>
+              <span>{formatViews(video.views)} views</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-const items = [
-  {
-    title: "Latest YouTube Video",
-    description: "Check out my newest upload on game development tips!",
-    header: <VideoThumbnail src="/images/youtube-thumbnail.jpg" />,
-    icon: <IconBrandYoutube className="h-5 w-5 text-red-500" />,
-  },
-  {
-    title: "Behind-the-Scenes",
-    description: "Exclusive look at my content creation process.",
-    header: <VideoThumbnail src="/images/bts-thumbnail.jpg" />,
-    icon: <IconMovie className="h-5 w-5 text-blue-500" />,
-  },
-  {
-    title: "Live Coding Session",
-    description: "Join me for a real-time problem-solving stream!",
-    header: <VideoThumbnail src="/images/live-coding-thumbnail.jpg" />,
-    icon: <IconLivePhoto className="h-5 w-5 text-green-500" />,
-  },
-  {
-    title: "Tech Review Series",
-    description: "In-depth looks at the latest gadgets and tools for creators.",
-    header: <VideoThumbnail src="/images/tech-review-thumbnail.jpg" />,
-    icon: <IconDeviceTv className="h-5 w-5 text-purple-500" />,
-  },
-  {
-    title: "TikTok Highlights",
-    description: "Quick tips and tricks in bite-sized videos.",
-    header: <VideoThumbnail src="/images/tiktok-thumbnail.jpg" />,
-    icon: <IconBrandTiktok className="h-5 w-5 text-pink-500" />,
-  },
-  {
-    title: "Instagram Reels",
-    description: "Sneak peeks and daily life as a content creator.",
-    header: <VideoThumbnail src="/images/instagram-thumbnail.jpg" />,
-    icon: <IconBrandInstagram className="h-5 w-5 text-orange-500" />,
-  },
-  {
-    title: "Twitch Stream VODs",
-    description: "Catch up on my latest gaming and coding streams.",
-    header: <VideoThumbnail src="/images/twitch-thumbnail.jpg" />,
-    icon: <IconBrandTwitch className="h-5 w-5 text-purple-600" />,
-  },
-];
+const getIconForCategory = (category: string) => {
+  switch (category.toLowerCase()) {
+    case 'youtube':
+      return <IconBrandYoutube className="h-5 w-5 text-red-500" />;
+    case 'behind-the-scenes':
+      return <IconMovie className="h-5 w-5 text-blue-500" />;
+    case 'live-coding':
+      return <IconLivePhoto className="h-5 w-5 text-green-500" />;
+    case 'tech-review':
+      return <IconDeviceTv className="h-5 w-5 text-purple-500" />;
+    case 'tiktok':
+      return <IconBrandTiktok className="h-5 w-5 text-pink-500" />;
+    case 'instagram':
+      return <IconBrandInstagram className="h-5 w-5 text-orange-500" />;
+    case 'twitch':
+      return <IconBrandTwitch className="h-5 w-5 text-purple-600" />;
+    default:
+      return <IconMovie className="h-5 w-5 text-gray-500" />;
+  }
+};
+
+const formatDuration = (seconds: number): string => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+};
+
+const formatViews = (views: number): string => {
+  if (views >= 1000000) {
+    return `${(views / 1000000).toFixed(1)}M`;
+  } else if (views >= 1000) {
+    return `${(views / 1000).toFixed(1)}K`;
+  }
+  return views.toString();
+};

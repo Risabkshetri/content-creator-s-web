@@ -160,12 +160,13 @@ export const MobileSidebar = ({
 export const SidebarLink = ({
   link,
   className,
+  onClick,
   ...props
 }: {
   link: Links;
   className?: string;
-  props?: LinkProps;
-}) => {
+  onClick?: () => void;
+} & Omit<LinkProps, 'href'>) => {
   const { open, animate } = useSidebar();
   return (
     <Link
@@ -174,6 +175,11 @@ export const SidebarLink = ({
         "flex items-center justify-start gap-4 py-3 px-4 rounded-lg hover:bg-slate-300 transition-colors duration-200",
         className
       )}
+      onClick={(e) => {
+        if (onClick) {
+          onClick();
+        }
+      }}
       {...props}
     >
       <span className="text-black">{link.icon}</span>

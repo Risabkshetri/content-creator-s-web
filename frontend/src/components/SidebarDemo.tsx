@@ -66,11 +66,17 @@ const navContent = {
 
 export default function SidebarDemo(){
   const [open, setOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) { // Check if it's a small device
+      setOpen(false);
+    }
+  };
+
   return (
     <div
       className={cn(
         "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto overflow-hidden"
-        
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
@@ -84,6 +90,7 @@ export default function SidebarDemo(){
                   href: "#",
                   icon: <IconHome className="text-black h-5 w-5 flex-shrink-0" />
                 }}
+                onClick={handleLinkClick}
               />
               {Object.entries(navContent).map(([category, items]) => (
                 <div key={category} className="mt-4">
@@ -96,6 +103,7 @@ export default function SidebarDemo(){
                         href: item.href,
                         icon: 'icon' in item ? item.icon : <IconStar className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                       }}
+                      onClick={handleLinkClick}
                     />
                   ))}
                 </div>
@@ -109,6 +117,7 @@ export default function SidebarDemo(){
                 href: "#",
                 icon: <IconLogout className="text-black h-5 w-5 flex-shrink-0" />
               }}
+              onClick={handleLinkClick}
             />
             <SidebarLink
               link={{
@@ -124,6 +133,7 @@ export default function SidebarDemo(){
                   />
                 ),
               }}
+              onClick={handleLinkClick}
             />
           </div>
         </SidebarBody>
@@ -186,4 +196,3 @@ const LogoIcon = () => {
 //     </div>
 //   );
 // };
-

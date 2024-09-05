@@ -11,7 +11,7 @@ export default function About() {
             <div className="absolute inset-0 filter blur-md opacity-75"></div>
             <div className="relative z-10 overflow-hidden rounded-lg shadow-lg">
               <Image
-                src="/images/profile1.png"
+                src="/images/profile3.jpg"
                 width={300}
                 height={400}
                 alt="Rishab Kshetri"
