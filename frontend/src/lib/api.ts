@@ -51,7 +51,9 @@ interface User {
 // Fetch videos
 export const fetchVideos = async (): Promise<Video[]> => {
   try {
-    const response = await axios.get<Video[]>(`${API_BASE_URL}/videos`);
+    const response = await axios.get<Video[]>(`${API_BASE_URL}/videos`, {
+      baseURL: API_BASE_URL,
+    });
     return response.data;
   } catch (error) {
     console.error('Error fetching videos:', error);
@@ -62,7 +64,9 @@ export const fetchVideos = async (): Promise<Video[]> => {
 // Fetch blogs
 export const fetchBlogs = async (): Promise<Blog[]> => {
   try {
-    const response = await axios.get<Blog[]>(`${API_BASE_URL}/blogs`);
+    const response = await axios.get<Blog[]>(`${API_BASE_URL}/blogs`, {
+      baseURL: API_BASE_URL,
+    });
     return response.data;
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -72,7 +76,13 @@ export const fetchBlogs = async (): Promise<Blog[]> => {
 
 // Fetch users
 export const fetchUsers = async (): Promise<User[]> => {
-  const response = await axios.get<User[]>(`${API_BASE_URL}/users`);
-  return response.data;
+  try {
+    const response = await axios.get<User[]>(`${API_BASE_URL}/users`, {
+      baseURL: API_BASE_URL,
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    throw error;
+  }
 };
-
