@@ -46,7 +46,7 @@ export default function Contact() {
             className="w-full lg:w-1/3 mb-8 lg:mb-0"
           >
             <Image
-              src="/images/profile2.png"
+              src="/images/profile5.png"
               alt="Content Creator"
               width={300}
               height={300}

@@ -32,7 +32,7 @@ export const VideoContent: React.FC<VideoContentProps> = ({ videos }) => {
               src={video.thumbnail}
               alt={video.title}
               layout="fill"
-              objectFit="cover"
+              objectFit="fill"
               className="transition-transform duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">

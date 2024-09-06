@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { fetchBlogs } from "@/lib/api";
 import { Blog } from "@/lib/api";
+import { generateSlug } from "@/lib/api";
 
 const BlogCard: React.FC<Blog> = ({
   title,
@@ -51,7 +52,7 @@ const BlogPage: React.FC = async () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <Link href={`/blog/${post.category}/${post.id}`} key={post.id}>
+            <Link href={`/blog/${post.category}/${generateSlug(post.title)}`} key={post.id}>
               <BlogCard {...post} />
             </Link>
           ))}
