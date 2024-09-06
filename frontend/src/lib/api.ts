@@ -32,7 +32,7 @@ export interface Blog {
   images?: string[];
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8081/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_UR || 'http://localhost:8081/api';
 
 
 export function generateSlug(title: string): string {
