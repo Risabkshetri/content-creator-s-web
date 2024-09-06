@@ -19,7 +19,7 @@ export interface Video {
   likes: number;
   tags: string[];
 };
-interface Blog {
+export interface Blog {
   id?: string;
   title: string;
   description?: string;
