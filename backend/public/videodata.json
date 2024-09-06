@@ -1,0 +1,78 @@
+[
+    {
+      "title": "Introduction to Node.js",
+      "description": "A comprehensive introduction to Node.js, covering basic to advanced concepts.",
+      "content": "This is the full content of the Node.js tutorial video.",
+      "author": "John Doe",
+      "createdAt": "2023-09-01T10:00:00Z",
+      "updatedAt": "2023-09-01T12:00:00Z",
+      "category": "Programming",
+      "thumbnail": "https://example.com/thumbnails/nodejs_intro.jpg",
+      "videoUrl": "https://example.com/videos/nodejs_intro.mp4",
+      "duration": 7200,
+      "views": 1500,
+      "likes": 350,
+      "tags": ["Node.js", "JavaScript", "Backend", "Programming"]
+    },
+    {
+      "title": "React for Beginners",
+      "description": "Learn the basics of React.js in this beginner-friendly course.",
+      "content": "This is the full content of the React.js beginner course.",
+      "author": "Jane Smith",
+      "createdAt": "2023-07-15T09:30:00Z",
+      "updatedAt": "2023-07-15T11:30:00Z",
+      "category": "Web Development",
+      "thumbnail": "https://example.com/thumbnails/react_beginners.jpg",
+      "videoUrl": "https://example.com/videos/react_beginners.mp4",
+      "duration": 5400,
+      "views": 2300,
+      "likes": 600,
+      "tags": ["React", "JavaScript", "Frontend", "Web Development"]
+    },
+    {
+      "title": "Mastering Python in 30 Days",
+      "description": "A complete guide to mastering Python programming within a month.",
+      "content": "This is the full content of the Python mastery course.",
+      "author": "Michael Green",
+      "createdAt": "2023-05-10T14:00:00Z",
+      "updatedAt": "2023-05-11T08:00:00Z",
+      "category": "Programming",
+      "thumbnail": "https://example.com/thumbnails/python_mastery.jpg",
+      "videoUrl": "https://example.com/videos/python_mastery.mp4",
+      "duration": 9000,
+      "views": 5000,
+      "likes": 1200,
+      "tags": ["Python", "Programming", "Backend", "Data Science"]
+    },
+    {
+      "title": "Introduction to Machine Learning",
+      "description": "A beginner's course on the fundamentals of machine learning.",
+      "content": "This is the full content of the machine learning introductory video.",
+      "author": "Lisa Williams",
+      "createdAt": "2023-08-21T16:00:00Z",
+      "updatedAt": "2023-08-21T18:00:00Z",
+      "category": "Data Science",
+      "thumbnail": "https://example.com/thumbnails/ml_intro.jpg",
+      "videoUrl": "https://example.com/videos/ml_intro.mp4",
+      "duration": 7200,
+      "views": 4300,
+      "likes": 800,
+      "tags": ["Machine Learning", "AI", "Data Science", "Python"]
+    },
+    {
+      "title": "CSS Animations: Advanced Techniques",
+      "description": "Learn how to create stunning CSS animations with advanced techniques.",
+      "content": "This is the full content of the CSS animations tutorial.",
+      "author": "Emily Johnson",
+      "createdAt": "2023-06-10T10:30:00Z",
+      "updatedAt": "2023-06-10T12:00:00Z",
+      "category": "Web Design",
+      "thumbnail": "https://example.com/thumbnails/css_animations.jpg",
+      "videoUrl": "https://example.com/videos/css_animations.mp4",
+      "duration": 3600,
+      "views": 3200,
+      "likes": 900,
+      "tags": ["CSS", "Web Design", "Animations", "Frontend"]
+    }
+  ]
+  
