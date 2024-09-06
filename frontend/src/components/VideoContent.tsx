@@ -1,6 +1,7 @@
 import React from 'react';
 import { Video } from '@/lib/api';
 import Image from "next/image";
+import Link from 'next/link';
 import {
   IconBrandYoutube,
   IconMovie,
@@ -25,6 +26,7 @@ export const VideoContent: React.FC<VideoContentProps> = ({ videos }) => {
             i === 3 || i === 6 ? "md:col-span-2" : ""
           }`}
         >
+          <Link href={video.videoUrl}>
           <div className="relative h-48 w-full">
             <Image
               src={video.thumbnail}
@@ -34,9 +36,10 @@ export const VideoContent: React.FC<VideoContentProps> = ({ videos }) => {
               className="transition-transform duration-300 hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-              <div className="text-white text-4xl">▶️</div>
+              <div className="text-red-600 text-4xl">▶️</div>
             </div>
           </div>
+          </Link>
           <div className="p-4">
             <div className="flex items-center mb-2">
               {getIconForCategory(video.category)}

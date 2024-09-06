@@ -11,7 +11,7 @@ export default function About() {
             <div className="absolute inset-0 filter blur-md opacity-75"></div>
             <div className="relative z-10 overflow-hidden rounded-lg shadow-lg">
               <Image
-                src="/images/profile3.jpg"
+                src="https://res.cloudinary.com/dufaxdxsj/image/upload/v1725557174/brazil-1368806_1280_jves0l.jpg"
                 width={300}
                 height={400}
                 alt="Rishab Kshetri"
