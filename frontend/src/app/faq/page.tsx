@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconChevronDown } from '@tabler/icons-react';
 
-
 const faqs = [
   {
     question: "What type of content do you create?",
@@ -28,7 +27,7 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer }) => {
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
