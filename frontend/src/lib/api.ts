@@ -51,18 +51,10 @@ interface User {
 // Fetch videos
 export const fetchVideos = async (): Promise<Video[]> => {
   try {
-    console.log(`Fetching videos from: ${API_BASE_URL}/videos`);
     const response = await axios.get<Video[]>(`${API_BASE_URL}/videos`);
-    console.log('Fetched videos successfully');
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('Error fetching videos:', error.message);
-      console.error('Status:', error.response?.status);
-      console.error('Data:', error.response?.data);
-    } else {
-      console.error('Unexpected error:', error);
-    }
+    console.error('Error fetching videos:', error);
     throw error;
   }
 };
