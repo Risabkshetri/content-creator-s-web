@@ -45,7 +45,7 @@ interface BlogPost {
 }
 
 const BlogCard: React.FC<BlogPost> = ({ title, description, image, slug, category }) => (
-  <Link href={`/blog/${category}/${slug}`} className="block">
+  <Link href={`/dashboard/blogs/${category}/${slug}`} className="block">
     <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
       <Image
         src={image}
