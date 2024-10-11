@@ -24,7 +24,7 @@ async function VideosPage() {
           Error Loading Videos
         </h1>
         <p className='text-center text-gray-600'>
-          We're sorry, but there was an error loading the videos. Please try again later.
+          We&apos;re sorry, but there was an error loading the videos. Please try again later.
         </p>
       </div>
     );
