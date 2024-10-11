@@ -1,8 +1,17 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaYoutube, FaTwitter, FaInstagram, FaVideo, FaBlog, FaMicrophone, FaStream, FaStar, FaHeart, FaInfoCircle } from 'react-icons/fa'
+import { usePathname } from 'next/navigation'
 
 function Footer({className = ''}) {
+const pathname = usePathname();
+const isDashboard = pathname.startsWith('/dashboard');
+
+if(!isDashboard){
+  return null;
+}
   return (
     <footer className={`w-full py-8 bg-gray-100 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

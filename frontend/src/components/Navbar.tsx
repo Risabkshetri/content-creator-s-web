@@ -7,16 +7,10 @@ import SidebarDemo from "./SidebarDemo";
 import { usePathname } from "next/navigation";
 
 export default function Navbar({ className }: { className?: string }) {
-
-const pathname = usePathname();
-const isDashboard = pathname.startsWith('/dashboard');
-
-if(!isDashboard){
-  return null;
-}
-
   const [active, setActive] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+  const isDashboard = pathname.startsWith('/dashboard');
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -88,6 +82,10 @@ if(!isDashboard){
       </MenuItem>
     </Menu>
   );
+
+  if (!isDashboard) {
+    return null;
+  }
 
   return (
     <div className={cn("fixed top-0 inset-x-0 max-w-2xl mx-auto z-50", className)}>
