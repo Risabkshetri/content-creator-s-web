@@ -1,10 +1,7 @@
-
-
 import axios from 'axios';
 import { AuthResponse, User } from '@/types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8081/api'  ;
-console.log(API_URL)
+const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://content-creator-backend-3o1l.onrender.com/api';
 
 // Create an axios instance
 const api = axios.create({
@@ -16,9 +13,11 @@ const api = axios.create({
 
 // Add a request interceptor
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('accessToken');
-  if (token) {
-    config.headers['Authorization'] = `Bearer ${token}`;
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
   }
   return config;
 }, (error) => {
@@ -29,9 +28,10 @@ export const login = async (email: string, password: string): Promise<AuthRespon
   try {
     const response = await api.post('/users/login', { email, password });
     const { accessToken, refreshToken, user } = response.data;
-    console.log("accessToken:", accessToken, " refreshToken", refreshToken)
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('refreshToken', refreshToken);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('refreshToken', refreshToken);
+    }
     return { user, accessToken, refreshToken };
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -43,18 +43,22 @@ export const login = async (email: string, password: string): Promise<AuthRespon
 };
 
 export const logout = async (): Promise<void> => {
-  const refreshToken = localStorage.getItem('refreshToken');
-  try {
-    await api.post('/users/logout', { refreshToken });
-  } catch (error) {
-    console.error('Logout error:', error);
-  } finally {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+  if (typeof window !== 'undefined') {
+    const refreshToken = localStorage.getItem('refreshToken');
+    try {
+      await api.post('/users/logout', { refreshToken });
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+    }
   }
 };
 
 export const refreshToken = async (): Promise<string | null> => {
+  if (typeof window === 'undefined') return null;
+  
   const refreshToken = localStorage.getItem('refreshToken');
   if (!refreshToken) return null;
 
@@ -104,7 +108,7 @@ export const fetchUserData = async (userId: string): Promise<User | null> => {
 };
 
 export const isAuthenticated = (): boolean => {
-  return !!localStorage.getItem('accessToken');
+  return typeof window !== 'undefined' && !!localStorage.getItem('accessToken');
 };
 
 export const register = async (username: string, email: string, password: string): Promise<void> => {
