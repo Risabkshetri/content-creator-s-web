@@ -47,7 +47,6 @@ interface User {
   username: string;
   email: string;
 }
-
 // Fetch videos
 export const fetchVideos = async (): Promise<Video[]> => {
   try {
