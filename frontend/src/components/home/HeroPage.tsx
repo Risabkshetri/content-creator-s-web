@@ -8,7 +8,7 @@ export default function HeroPage() {
       <div className="absolute inset-0 w-full h-full bg-black bg-opacity-50 z-0"></div>
       <video
         className="absolute inset-0 w-full h-full object-cover z-0 bg-black bg-opacity-70 bg-fixed"
-        src="/images/herovideo.mp4"
+        src="https://res.cloudinary.com/dufaxdxsj/video/upload/v1728793119/grwnrhgd9mofm8ewi7kt.mp4"
         autoPlay
         loop
         muted
