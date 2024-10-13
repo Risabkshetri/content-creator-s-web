@@ -29,7 +29,6 @@ export const login = async (email: string, password: string): Promise<AuthRespon
   try {
     const response = await api.post('/users/login', { email, password });
     const { accessToken, refreshToken, user } = response.data;
-    console.log("accessToken:", accessToken, " refreshToken", refreshToken)
     localStorage.setItem('accessToken', accessToken);
     localStorage.setItem('refreshToken', refreshToken);
     return { user, accessToken, refreshToken };

@@ -50,7 +50,7 @@ export default function LandingPage() {
                 href="/login"
                 className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg"
               >
-                See My Work
+                Login
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -58,7 +58,7 @@ export default function LandingPage() {
                 href="/register"
                 className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-full hover:bg-purple-100 transition-colors shadow-lg"
               >
-                Let&apos;s Connect
+               Register
               </Link>
             </motion.div>
           </div>
