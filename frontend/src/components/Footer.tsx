@@ -30,11 +30,11 @@ if(!isDashboard){
           </div>
           <nav className="flex flex-wrap gap-4 mt-4 sm:mt-0">
             {[
-              { label: 'Videos', link: '/videos', icon: <FaVideo className="inline-block mr-1 text-red-500" /> },
-              { label: 'Blog', link: '/blog', icon: <FaBlog className="inline-block mr-1 text-blue-500" /> },
-              { label: 'Podcasts', link: '/podcasts', icon: <FaMicrophone className="inline-block mr-1 text-green-500" /> },
-              { label: 'Live Streams', link: '/live-streams', icon: <FaStream className="inline-block mr-1 text-purple-500" /> },
-              { label: 'Membership', link: '/membership', icon: <FaStar className="inline-block mr-1 text-yellow-500" /> },
+              { label: 'Videos', link: '/dashboard/videos', icon: <FaVideo className="inline-block mr-1 text-red-500" /> },
+              { label: 'Blog', link: '/dashboard/blogs', icon: <FaBlog className="inline-block mr-1 text-blue-500" /> },
+              { label: 'Podcasts', link: '/dashboard/podcasts', icon: <FaMicrophone className="inline-block mr-1 text-green-500" /> },
+              { label: 'Live Streams', link: '/dashboard/live-streams', icon: <FaStream className="inline-block mr-1 text-purple-500" /> },
+              { label: 'Membership', link: '/dashboard/membership', icon: <FaStar className="inline-block mr-1 text-yellow-500" /> },
             ].map((item, index) => (
               <Link
                 key={index}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { register } from '@/lib/auth';
+import Link from 'next/link';
 
 export default function RegisterForm() {
   const [username, setUsername] = useState('');
@@ -30,8 +31,7 @@ export default function RegisterForm() {
   };
 
   return (
-    
-     <div className="min-h-screen flex items-center justify-center bg-gray-300">
+    <div className="min-h-screen flex items-center justify-center bg-gray-300">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Create Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -114,6 +114,14 @@ export default function RegisterForm() {
             </button>
           </div>
         </form>
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-600">
+            Already have an account?{' '}
+            <Link href="/login" className="text-indigo-600 hover:text-indigo-500">
+              Log in here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
