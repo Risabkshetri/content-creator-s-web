@@ -70,7 +70,7 @@ export default BlogPost;
 export async function generateStaticParams() {
   try {
     const blogPosts = await fetchBlogs();
-    return blogPosts.map((post: Blog) => ({
+    return blogPosts.slice(0, 10).map((post: Blog) => ({
       category: post.category,
       slug: generateSlug(post.title),
     }));
