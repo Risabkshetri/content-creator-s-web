@@ -34,7 +34,7 @@ if(!isDashboard){
               { label: 'Blog', link: '/dashboard/blogs', icon: <FaBlog className="inline-block mr-1 text-blue-500" /> },
               { label: 'Podcasts', link: '/dashboard/podcasts', icon: <FaMicrophone className="inline-block mr-1 text-green-500" /> },
               { label: 'Live Streams', link: '/dashboard/live-streams', icon: <FaStream className="inline-block mr-1 text-purple-500" /> },
-              { label: 'Membership', link: '/dashboard/membership', icon: <FaStar className="inline-block mr-1 text-yellow-500" /> },
+              { label: 'Membership', link: '#', icon: <FaStar className="inline-block mr-1 text-yellow-500" /> },
             ].map((item, index) => (
               <Link
                 key={index}
@@ -65,8 +65,8 @@ if(!isDashboard){
           ))}
         </div>
         <div className="mt-8 text-center text-sm text-gray-500">
-          <Link href="/privacy-policy" className="hover:text-gray-700 mr-4">Privacy Policy</Link>
-          <Link href="/terms-of-service" className="hover:text-gray-700">Terms of Service</Link>
+          <Link href="#" className="hover:text-gray-700 mr-4">Privacy Policy</Link>
+          <Link href="#" className="hover:text-gray-700">Terms of Service</Link>
         </div>
       </div>
     </footer>

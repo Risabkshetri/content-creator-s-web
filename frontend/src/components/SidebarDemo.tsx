@@ -19,10 +19,10 @@ import { cn } from "@/lib/utils";
 
 const navContent = {
   Content: [
-    { href: "/videos", label: "Videos", icon: <IconVideo /> },
+    { href: "/dashboard/videos", label: "Videos", icon: <IconVideo /> },
     { href: "/dashboard/blogs", label: "Blog Posts", icon: <IconArticle /> },
-    { href: "/podcasts", label: "Podcasts", icon: <IconMicrophone /> },
-    { href: "/live-streams", label: "Live Streams", icon: <IconLivePhoto /> }
+    { href: "/dashboard/podcasts", label: "Podcasts", icon: <IconMicrophone /> },
+    { href: "/dashboard/live-streams", label: "Live Streams", icon: <IconLivePhoto /> }
   ],
   Featured: [
     {

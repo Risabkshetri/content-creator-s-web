@@ -66,10 +66,10 @@ export default function Navbar({ className }: { className?: string }) {
       </MenuItem>
       <MenuItem setActive={setActive} active={active} item="Support">
         <div className="flex flex-col space-y-4 text-sm">
-          <HoveredLink href="/dashboard/membership">Membership</HoveredLink>
-          <HoveredLink href="/dashboard/merch">Merchandise</HoveredLink>
-          <HoveredLink href="/dashboard/donate">Donate</HoveredLink>
-          <HoveredLink href="/dashboard/patreon">Patreon</HoveredLink>
+          <HoveredLink href="#">Membership</HoveredLink>
+          <HoveredLink href="#">Merchandise</HoveredLink>
+          <HoveredLink href="#">Donate</HoveredLink>
+          <HoveredLink href="#">Patreon</HoveredLink>
         </div>
       </MenuItem>
       <MenuItem setActive={setActive} active={active} item="About">
@@ -77,7 +77,7 @@ export default function Navbar({ className }: { className?: string }) {
           <HoveredLink href="/dashboard/about">Bio</HoveredLink>
           <HoveredLink href="/dashboard/contact">Contact</HoveredLink>
           <HoveredLink href="/dashboard/faq">FAQ</HoveredLink>
-          <HoveredLink href="/dashboard/press">Press Kit</HoveredLink>
+          <HoveredLink href="#">Press Kit</HoveredLink>
         </div>
       </MenuItem>
     </Menu>
