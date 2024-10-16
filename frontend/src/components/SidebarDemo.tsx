@@ -20,20 +20,20 @@ import { cn } from "@/lib/utils";
 const navContent = {
   Content: [
     { href: "/videos", label: "Videos", icon: <IconVideo /> },
-    { href: "/blog", label: "Blog Posts", icon: <IconArticle /> },
+    { href: "/dashboard/blogs", label: "Blog Posts", icon: <IconArticle /> },
     { href: "/podcasts", label: "Podcasts", icon: <IconMicrophone /> },
     { href: "/live-streams", label: "Live Streams", icon: <IconLivePhoto /> }
   ],
   Featured: [
     {
       title: "Latest Video",
-      href: "/videos/latest",
+      href: "/dashboard/videos/latest",
       src: "/images/recentvideo.png",
       description: "Check out my most recent video content."
     },
     {
       title: "Popular Blog Post",
-      href: "/blog/popular",
+      href: "/dashboard/blogs/popular",
       src: "/images/blogpost.png",
       description: "Read my most popular blog post of the month."
     },
@@ -45,22 +45,22 @@ const navContent = {
     },
     {
       title: "Upcoming Live Stream",
-      href: "/live-streams/upcoming",
+      href: "/dashboard/live-streams/upcoming",
       src: "/images/livestreame.png",
       description: "Join my next live stream event and interact in real-time."
     }
   ],
   Support: [
-    { href: "/membership", label: "Membership", icon: <IconStar className="text-black"/> },
-    { href: "/merch", label: "Merchandise", icon: <IconHeart className="text-black" /> },
-    { href: "/donate", label: "Donate", icon: <IconHeart className="text-black" /> },
-    { href: "/patreon", label: "Patreon", icon: <IconHeart className="text-black" /> }
+    { href: "#", label: "Membership", icon: <IconStar className="text-black"/> },
+    { href: "#", label: "Merchandise", icon: <IconHeart className="text-black" /> },
+    { href: "#", label: "Donate", icon: <IconHeart className="text-black" /> },
+    { href: "#", label: "Patreon", icon: <IconHeart className="text-black" /> }
   ],
   About: [
-    { href: "/bio", label: "Bio", icon: <IconInfoCircle className="text-black" /> },
-    { href: "/contact", label: "Contact", icon: <IconInfoCircle className="text-black" /> },
-    { href: "/faq", label: "FAQ", icon: <IconInfoCircle className="text-black" /> },
-    { href: "/press", label: "Press Kit", icon: <IconInfoCircle className="text-black" /> }
+    { href: "/dashboard/bio", label: "Bio", icon: <IconInfoCircle className="text-black" /> },
+    { href: "/dashboard/contact", label: "Contact", icon: <IconInfoCircle className="text-black" /> },
+    { href: "/dashboard/faq", label: "FAQ", icon: <IconInfoCircle className="text-black" /> },
+    { href: "#", label: "Press Kit", icon: <IconInfoCircle className="text-black" /> }
   ]
 };
 
