@@ -25,10 +25,10 @@ export default function About() {
             <h3 className="text-xl text-indigo-600 font-semibold mb-2">Who is</h3>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Alex Mangunum?</h1>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            Hey there! I'm Alex, a passionate content creator with a knack for storytelling across digital platforms. With 5+ years of experience, I specialize in crafting engaging content that resonates with audiences and drives results.
+            Hey there! I&apos;m Alex, a passionate content creator with a knack for storytelling across digital platforms. With 5+ years of experience, I specialize in crafting engaging content that resonates with audiences and drives results.
             </p>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            Whether you're looking to boost your YouTube presence, create scroll-stopping Instagram posts, build your professional brand on LinkedIn, or spark conversations on Twitter, I've got you covered. Let's work together to bring your vision to life and grow your online community!
+            Whether you&apos;re looking to boost your YouTube presence, create scroll-stopping Instagram posts, build your professional brand on LinkedIn, or spark conversations on Twitter, I&apos;ve got you covered. Let&apos;s work together to bring your vision to life and grow your online community!
             </p>
             <div className="mt-6">
               <a href="#contact" className="inline-block bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md hover:shadow-lg">Get in Touch</a>
