@@ -30,7 +30,7 @@ const BlogPost: React.FC<{ params: Params }> = async ({ params }) => {
 
     return (
       <div className="max-w-2xl mx-auto overflow-y-auto p-4 mt-16">
-        <Link href="/blog" className="text-blue-500 hover:underline mb-4 inline-block">
+        <Link href="/dashboard/blogs" className="text-blue-500 hover:underline mb-4 inline-block">
           &larr; Back to Blog
         </Link>
         <span className="text-sm text-gray-500">Category: {post.category}</span>

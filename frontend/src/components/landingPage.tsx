@@ -88,7 +88,7 @@ export default function LandingPage() {
                 className="w-full md:w-1/3 aspect-square bg-purple-200 rounded-full flex items-center justify-center overflow-hidden"
               >
                 <Image 
-                  src="/images/profile.png" 
+                  src="https://res.cloudinary.com/dufaxdxsj/image/upload/v1729185214/rkuqmo7i_qr4brp.png" 
                   alt="Alex Creative" 
                   width={300}
                   height={300}
